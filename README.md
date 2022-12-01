@@ -1,4 +1,102 @@
-# Polymer App Toolbox - Starter Kit
+# InterIntel Test
+
+***
+
+## Creator :man_technologist:
+
+This repo was created and is maintained by **Kelvin Njoro**
+
+* [Twitter](https://twitter.com/kelvinprincipal/)
+* [Github](https://github.com/principalkelvo/)
+* [Facebook](https://facebook.com/principal.kelvin1/)
+* [Youtube](https://www.youtube.com/channel/UCtFlIkYU5mIPPWI-bWSIgVg)
+* [Medium](https://medium.com/@principalkelvo)
+* [buymeacoffee](https://www.buymeacoffee.com/kelvinnjoro)
+
+## Preview
+
+### Hero Preview
+
+![image](./images/manifest/my-app%20(6).png "Upload Files")
+
+### View 2 Preview
+
+![image](./images/manifest/my-app%20(1).png "Uploading")
+
+## Description
+
+>>Interintel’s front end runs on Polymer 3.0 with a strong focus on lit elements. For HTML column layouts and styling, we use bulma css framework..
+
+### Contains
+
+* inputs to capture a user’s-
+  * name
+  * email
+  * phone number
+* An e-commerce view product card with animation
+* Todo's from [API](https://jsonplaceholder.typicode.com/todos?_limit=5)
+* a list of sorted dictionary in ascending order
+* Build with :smiling_face_with_three_hearts:
+
+### Features
+
+* Login page - alerts users details
+* Light source code - fast to load
+* Beautiful interface - compatible with all desktops and with a beautiful and pleasant interface.
+* Dark mode- still under construction
+<!-- * Responsive - compatible with all gadgets. -->
+
+### Requirements
+
+* Access to  a computer or any other gadget
+* Access to internet
+
+### Setup and installation
+
+> To view the assignment,
+
+* fork from [Here](https://github.com/principalkelvo/interintel-tech-test/fork) or Copy the link <https://github.com/principalkelvo/interintel-tech-test/fork>
+* download or clone the repository [Here](https://github.com/principalkelvo/interintel-tech-test.git) **or**
+* Copy the link <https://github.com/principalkelvo/interintel-tech-test.git>
+
+* run npm install
+
+* run npm start
+
+<!-- > How to navigate
+
+* [Blog](https://medium.com/@principalkelvo/how-to-upload-and-share-files-anonymously-22b91ff8461d)
+* [Youtube](https://youtu.be/hzzf2KhRknc) -->
+
+### Built with
+
+* Polymer and Lit - which was used to develop the structure and styling of the User Interface.
+* JS - which was used to create a great interaction with the User Interface.
+
+## Bugs and Issues
+
+>Have a bug or issue? Open a new issue here on Github
+
+### Known Bugs
+
+* There are no known bugs
+
+## Image Attribution
+
+>Images owned by Kelvin Njoro
+>Free for personal use with attribution
+
+## Credits
+
+* [Google Fonts](https://fonts.google.com/)
+
+## License
+
+> Use it freely but please do not republish, distribute or sell
+> Thats it! Simple, clean and smooth!
+
+For learning
+## Polymer App Toolbox - Starter Kit
 
 [![Build Status](https://travis-ci.org/Polymer/polymer-starter-kit.svg?branch=master)](https://travis-ci.org/Polymer/polymer-starter-kit)
 
@@ -20,7 +118,7 @@ The PRPL pattern, in a nutshell:
 
 ### Setup
 
-##### Prerequisites
+#### Prerequisites
 
 Install [Polymer CLI](https://github.com/Polymer/polymer-cli) using
 [npm](https://www.npmjs.com) (we assume you have pre-installed [node.js](https://nodejs.org)).
