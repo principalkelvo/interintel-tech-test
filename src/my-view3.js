@@ -10,7 +10,7 @@
 
 // import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import { LitElement, html, css } from "lit";
-import { map } from 'lit/directives/map.js';
+import { map } from "lit/directives/map.js";
 import "@polymer/polymer/lib/elements/custom-style.js";
 import "./shared-styles.js";
 
@@ -37,7 +37,8 @@ class MyView3 extends LitElement {
   static get properties() {
     return {
       data: Array,
-      dictionary: Array,
+      // sortDict: Array,
+      dictionary: Object,
     };
   }
   //fetch data
@@ -58,18 +59,37 @@ class MyView3 extends LitElement {
     this.data = await this.resolveData();
     //print in console
     console.log(this.data);
+    // await this.dict();
+    // console.log("firstSort", this.sortDict);
   }
   constructor() {
     super();
     this.data = [];
+    // this.sortDict = [];
     this.dictionary = {
-      '34': 'thirty-four', '90': 'ninety',
-      '91': 'ninety-one', '21': 'twenty-one',
-      '61': 'sixty-one', '9': 'nine',
-      '2': 'two', '6': 'six', '3': 'three',
-      '8': 'eight', '80': 'eighty', '81': 'eighty-one',
-      'Ninety-Nine': '99', 'nine-hundred': '900'
-    }
+      34: "thirty-four",
+      90: "ninety",
+      91: "ninety-one",
+      21: "twenty-one",
+      61: "sixty-one",
+      9: "nine",
+      2: "two",
+      6: "six",
+      3: "three",
+      8: "eight",
+      80: "eighty",
+      81: "eighty-one",
+      "Ninety-Nine": "99",
+      "nine-hundred": "900",
+    };
+    // this.dictionary = {
+    //   '34': 'thirty-four', '90': 'ninety',
+    //   '91': 'ninety-one', '21': 'twenty-one',
+    //   '61': 'sixty-one', '9': 'nine',
+    //   '2': 'two', '6': 'six', '3': 'three',
+    //   '8': 'eight', '80': 'eighty', '81': 'eighty-one',
+    //   'Ninety-Nine': '99', 'nine-hundred': '900'
+    // }
   }
 
   //not working to be worked on later
@@ -86,7 +106,57 @@ class MyView3 extends LitElement {
   // }
 
   //sort dictionary keys
+  // async dict() {
+  //   const dictionary = {
+  //     34: "thirty-four",
+  //     90: "ninety",
+  //     91: "ninety-one",
+  //     21: "twenty-one",
+  //     61: "sixty-one",
+  //     9: "nine",
+  //     2: "two",
+  //     6: "six",
+  //     3: "three",
+  //     8: "eight",
+  //     80: "eighty",
+  //     81: "eighty-one",
+  //     "Ninety-Nine": "99",
+  //     "nine-hundred": "900",
+  //   };
+
+  //   const sorted = Object.keys(dictionary)
+  //     .sort()
+  //     .reduce((accumulator, key) => {
+  //       accumulator[key] = dictionary[key];
+
+  //       return accumulator;
+  //     }, {});
+
+  //   //changes object to array
+  //   for (const [key, value] of Object.entries(sorted)) {
+  //     this.sortDict.push(html`<h3 class="card-title">${key}, ${value}</h3>`);
+  //   }
+
+  //   console.log("sorted", sorted);
+  // }
   render() {
+
+    const sortD = []
+
+    const sorted = Object.keys(this.dictionary)
+      .sort()
+      .reduce((accumulator, key) => {
+        accumulator[key] = this.dictionary[key];
+
+        return accumulator;
+      }, {});
+
+    //changes object to array
+    for (const [key, value] of Object.entries(sorted)) {
+      sortD.unshift(html`<h3 class="card-title">${key}: ${value}</h3>`);
+    }
+
+
     return html`
       <custom-style>
         <style>
@@ -95,10 +165,10 @@ class MyView3 extends LitElement {
             color: #444;
           }
 
-          ul{
-            width:70%;
+          ul {
+            width: 70%;
           }
-          li:hover .card{
+          li:hover .card {
             background-color: #ff990055;
           }
           li {
@@ -143,7 +213,7 @@ class MyView3 extends LitElement {
 
           .card.checked .card-title,
           .card.checked .card-content {
-            color: #4285F4;
+            color: #4285f4;
           }
           .group-checkbox {
             position: relative;
@@ -170,12 +240,12 @@ class MyView3 extends LitElement {
           }
 
           .group-checkbox input:checked ~ i {
-            border-color: #4285F4;
+            border-color: #4285f4;
           }
 
           .checked {
             position: relative;
-            color: #4285F4;
+            color: #4285f4;
             text-decoration: line-through;
           }
         </style>
@@ -184,7 +254,7 @@ class MyView3 extends LitElement {
         ${map(
       this.data,
       (item) => html` <li>
-            <div class=${item.completed ? "card checked" : "card "} >
+            <div class=${item.completed ? "card checked" : "card "}>
               <label for="two" class="group-checkbox">
                 <input
                   type="checkbox"
@@ -201,9 +271,14 @@ class MyView3 extends LitElement {
     )}
       </ul>
 
-      <div>
-      Hello World
-      </div>
+     
+        <ul>
+          <li>
+            <div class="card ">
+            ${sortD}         
+            </div>
+          </li>
+        </ul>
     `;
   }
 }
