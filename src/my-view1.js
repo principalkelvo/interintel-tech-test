@@ -96,7 +96,7 @@ class MyView1 extends LitElement {
         </div>
         <div class="field">
           <p class="control">
-            <button class="button is-primary">Submit</button>
+            <button class="button is-info">Submit</button>
           </p>
         </div>
       </form>
